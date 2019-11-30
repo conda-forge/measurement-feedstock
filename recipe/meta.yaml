@@ -1,5 +1,5 @@
 {% set name = "measurement" %}
-{% set version = "3.0.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -8,7 +8,7 @@ package:
 source:
 
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8bca4f99521e4cfe8df4ca3eb086d36f1c713b6d102cb836980adca5874bee65
+  sha256: 352b20f7f0e553236af7c5ed48d091a51cf26061c1a063f46b31706ff7c0d57a
 
 build:
   noarch: python
