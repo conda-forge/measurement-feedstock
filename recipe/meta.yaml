@@ -7,27 +7,29 @@ package:
 
 source:
 
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 352b20f7f0e553236af7c5ed48d091a51cf26061c1a063f46b31706ff7c0d57a
 
 build:
   noarch: python
-  number: 2
+  number: 3
   script: "{{ PYTHON }} -m pip install . -vv "
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
     - setuptools_scm
     - sphinx
     - pytest-runner
   run:
-    - python >=3
+    - python >={{ python_min }}
     - six >=1.0
     - sympy >=0.7.3
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - measurement
 
