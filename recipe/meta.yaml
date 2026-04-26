@@ -1,19 +1,19 @@
 {% set name = "measurement" %}
-{% set version = "3.2.0" %}
+{% set version = "3.2.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
 
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 352b20f7f0e553236af7c5ed48d091a51cf26061c1a063f46b31706ff7c0d57a
+  sha256: a16fe5a8bd72f3682285e87a0abe880d647bcf6e3bf9cc727eeb261d6163c07e
 
 build:
   noarch: python
-  number: 2
-  script: "{{ PYTHON }} -m pip install . -vv "
+  number: 0
+  script: '{{ PYTHON }} -m pip install . -vv '
 
 requirements:
   host:
@@ -32,11 +32,11 @@ test:
     - measurement
 
 about:
-  home: "https://python-measurement.readthedocs.io/en/latest/"
-  license: "MIT"
-  license_family: "MIT"
-  license_file: "LICENSE"
-  summary: "Easily use and manipulate unit-aware measurement objects in Python"
+  home: https://python-measurement.readthedocs.io/en/latest/
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: Easily use and manipulate unit-aware measurement objects in Python
   description: |
     The package allows easy manipulation of unit-aware objects of Distance, Area,
     Energy, Speed, Temperature, Time, Volume and Weight measurements.
